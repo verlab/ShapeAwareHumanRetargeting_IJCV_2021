@@ -4,7 +4,8 @@
 ## Table of Contents
   * [Description](#description)
   * [Installation](#installation)
-  * [Downloading the model](#downloading-the-mod)
+  * [Dataset](#dataset)
+  * [Citation](#citation)
 
 ## Description
 
