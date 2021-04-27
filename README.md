@@ -12,7 +12,9 @@
 ## Installation
 * See the README in the subfolders retargeting and model-deformation-render
 
-## Dataset ([download](https://www.verlab.dcc.ufmg.br/MotionTransfer/MotionTransfer-dataset.tar.gz))
+## Dataset 
+
+- Link to [download](https://www.verlab.dcc.ufmg.br/MotionTransfer/MotionTransfer-dataset.tar.gz)
 
 There are 8 actors (S0-S7) in the dataset:
 
