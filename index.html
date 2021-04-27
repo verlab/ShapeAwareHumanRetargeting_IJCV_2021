@@ -4,7 +4,7 @@
 <head>
 <br/>
 <br/>
-<title>Learning to Dance</title>
+<title>Human Motion Transfer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
 <!-- jQuery -->
 <script src="http://code.jquery.com/jquery.min.js"></script>
@@ -27,31 +27,28 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="page-header">
-			<h1 class="text-center">Learning to dance: A graph convolutional adversarial network to generate realistic dance motions from audio</h1>
+			<h1 class="text-center">A Shape-Aware Retargeting Approach to Transfer Human Motion and Appearance in Monocular Videos</h1>
 		</div>
 	</div>
 </div>
 <br>
 <div class="row"> <!-- first names row-->
-		<div class="col-md-2">
-			<h5 class="text-center"><a href="https://jpeumesmo.github.io/">João P. Ferreira</a></h5>
-		</div>
-		<div class="col-md-3">
-			<h5 class="text-center"><a href="https://thiagomcoutinho.github.io/">Thiago M. Coutinho</a></h5>
-		</div>
 		<div class="col-md-3">
 			<h5 class="text-center">Thiago L. Gomes</h5>
 		</div>
-		<div class="col-md-2">
-			<h5 class="text-center"><a href="http://netolcc06.github.io/">José F. Neto</a></h5>
+		<div class="col-md-3">
+			<h5 class="text-center"><a href="http://www-sop.inria.fr/members/Renato-Jose.Martins/index.html">Renato Martins</a></h5>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-3">
+			<h5 class="text-center"><a href="https://jpeumesmo.github.io/">João P. Ferreira</a></h5>
+		</div>
+		<div class="col-md-3">
 			<h5 class="text-center">Rafael Azevedo</h5>
 		</div>
 </div>
 <div class="row"> <!-- second names row-->
 		<div class="col-md">
-			<h5 class="text-center"><a href="http://www-sop.inria.fr/members/Renato-Jose.Martins/index.html">Renato Martins</a></h5>
+			<h5 class="text-center">Guilherme Torres</h5>
 		</div>
 		<div class="col-md">
 			<h5 class="text-center"><a href="https://homepages.dcc.ufmg.br/~erickson/">Erickson R. Nascimento</a></h5>
@@ -74,26 +71,26 @@
 <br>
 <div class="row">
 	<div class="col-md-12">
-		<h5 class="text-center">Computers & Graphics</h5>
+		<h5 class="text-center">International Journal of Computer Vision (IJCV)</h5>
 	</div>
 <div>
 <br>
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-3">
 	</div>
 	<div class="col-md-1">
-		<h3 class="text-center"><a href="https://github.com/verlab/Learning2Dance_CAG_2020">[Code]</a></h3>
+		<h3 class="text-center"><a href="https://github.com/verlab/ShapeAwareHumanRetargeting_IJCV_2021">[Code]</a></h3>
 	</div>
 	<div class="col-md-1">
-		<h3 class="text-center"><a href="https://github.com/verlab/Learning2Dance_CAG_2020/blob/master/dataset.md">[Data]</a></h3>
+		<h3 class="text-center"><a href="https://github.com/verlab/ShapeAwareHumanRetargeting_IJCV_2021#dataset">[Data]</a></h3>
 	</div>
 	<div class="col-md-1">
-		<h3 class="text-center"><a href="https://arxiv.org/abs/2011.12999">[Arxiv]</a></h3>
+		<h3 class="text-center"><a href="https://arxiv.org/abs/2103.15596">[Arxiv]</a></h3>
 	</div>
 <!-- </div>
 <div class="row"> -->
 	<div class="col-md-3">
-		<h3 class="text-left"><a href="https://www.verlab.dcc.ufmg.br/motion-analysis/cag2020/">[Project Page]</a></h3>
+		<h3 class="text-left"><a href="https://www.verlab.dcc.ufmg.br/retargeting-motion">[Project Page]</a></h3>
 	</div>
 	<div class="col-md-5">
 	</div>
@@ -108,8 +105,8 @@
 
 	<p>
 	    <figure class="figure">
-	      <img src="assets/learning_to_dance.png" class="img-fluid mx-auto" alt="XXX">
-	      <figcaption class="figure-caption">Learning to Dance, a framework to generate human motion from an audio input using Graph Convolutional Networks.</figcaption>
+	      <img src="assets/teaser.png" class="img-fluid mx-auto" alt="XXX">
+	      <figcaption class="figure-caption"><b>Overview of our retargeting approach.</b> Our method is composed of four main components: human motion estimation in the source video (first component); we retarget this motion into a different target character (second component), considering the motion constraints (third component), and by last, we synthesize the appearance of the target character into the source video.</figcaption>
 	    </figure>
 	</p>
 
@@ -117,28 +114,28 @@
     <h2>Abstract</h2>
      <br>
     <p class="text-justify">
-		Synthesizing human motion through learning techniques is becoming an increasingly popular approach to alleviating the requirement of new data capture to produce animations. Learning to move naturally from audio, and in particular to dance, is one of the more complex motions humans often perform effortlessly. Each dance movement is unique, yet such movements maintain the core characteristics of the dance style. Most approaches addressing this problem with classical convolutional and recursive neural models undergo training and variability issues due to the non-Euclidean geometry of the motion manifold structure.In this paper, we design a novel method based on graph convolutional networks to tackle the problem of automatic dance generation from audio information. Our method is capable of generating natural motions, preserving the music style key moves across different generated motion samples, by taking advantage of an adversarial learning scheme conditioned on the input music audios. We evaluate our method using a user study and with several quantitative metrics of the generated motions' distributions. The results suggest the proposed GCN model outperforms the current state of the art dance generation method conditioned on music in different experiments. Moreover, our graph-convolutional approach is simpler, easier to be trained, and generates more realistic motion styles regarding qualitative and different quantitative metrics than state of the art, and with a visual movement perceptual quality even comparable to real motion data.
+		Transferring human motion and appearance between videos of human actors remains one of the key challenges in Computer Vision. Despite the advances from recent image-to-image translation approaches, there are several transferring contexts where most end-to-end learning-based retargeting methods still perform poorly. Transferring human appearance from one actor to another is only ensured when a strict setup has been complied, which is generally built considering their training regime's specificities. In this work, we propose a shape-aware approach based on a hybrid image-based rendering technique that exhibits competitive visual retargeting quality compared to state-of-the-art neural rendering approaches. The formulation leverages the user body shape into the retargeting while considering physical constraints of the motion in 3D and the 2D image domain. We also present a new video retargeting benchmark dataset composed of different videos with annotated human motions to evaluate the task of synthesizing people's videos, which can be used as a common base to improve tracking the progress in the field. The dataset and its evaluation protocols are designed to evaluate retargeting methods in more general and challenging conditions. Our method is validated in several experiments, comprising publicly available videos of actors with different shapes, motion types, and camera setups.
     </p>
 
 	<br>
  	<hr>
  	<br>
 
- <h2>Paper</h2>
+ <h2>Paper (Arxiv preprint)</h2>
   <br>
     <ul class="media-list, citations">
     <li class="media" id="gestures">
-        <a class="pull-left" href="https://arxiv.org/abs/2011.12999">
+        <a class="pull-left" href="https://arxiv.org/abs/2103.15596">
             <img class="media-object img-fluid img-thumbnail mr-4" src="assets/paper.png" alt="gestures paper" width="150">
         </a>
         <div class="media-body">
-            <h5 class="media-heading text-left">Learning to dance: A graph convolutional adversarial network to generate realistic dance motions from audio</h5>
+            <h5 class="media-heading text-left">A Shape-Aware Retargeting Approach to Transfer Human Motion and Appearance in Monocular Videos</h5>
             <p class="text-left">
-			  João P. Ferreira, Thiago M. Coutinho, Thiago L. Gomes, Jośe F. Neto, Rafael Azevedo, Renato Martins and Erickson R. Nascimento. 
+			  Thiago L. Gomes, Renato Martins, João P. Ferreira, Rafael Azevedo, Guilherme Torres and Erickson R. Nascimento. 
               <span class="cite-title">Learning to dance: A graph convolutional adversarial network to generate realistic dance motions from audio</span>,
               Elsevier Computers and Graphics, C&A, 2020.
               <br>
-              <a href="https://www.sciencedirect.com/science/article/pii/S0097849320301436?via%3Dihub">PDF</a>, <a href="#gestures" role="button" data-toggle="collapse" data-target="#collapse-gestures" aria-expanded="false" aria-controls="collapse">BibTeX</a>
+              <a href="https://arxiv.org/abs/2103.15596">PDF</a>, <a href="#gestures" role="button" data-toggle="collapse" data-target="#collapse-gestures" aria-expanded="false" aria-controls="collapse">BibTeX</a>
               <div class="collapse" id="collapse-gestures">
               <div class="card text-left bg-light mb-4">
                 @article{ferreira2020cag,<br> 
@@ -171,7 +168,7 @@
 
 	<h2>Code</h2>
 	<p>
-	<h3 class="text-center"><a href="https://github.com/verlab/Learning2Dance_CAG_2020">[PyTorch]</a></h3>
+	<h3 class="text-center"><a href="https://github.com/verlab/ShapeAwareHumanRetargeting_IJCV_2021">[PyTorch]</a></h3>
 	</p>
 
  	<br>
@@ -180,19 +177,17 @@
 
    	 <h2>Data</h2>
    	 <br>
-   	 <div>
-   	    <img src="assets/dataset.png" alt="Dataset" width=auto>
- 	</div>
-	<br>
-   	 <p class="text-justify">
-		We build a new dataset composed of paired videos of people dancing different music styles. The dataset is used to train and evaluate the methodologies for motion generation from audio. We split the samples into training and evaluation sets that contain multimodal data for three music/dance styles: Ballet, Michael Jackson, and Salsa.  These two sets are composed of two data types: visual data from careful-selected parts of publicly available videos of dancers performing representative movements of the music style and audio data from the styles we are training. The Figure above shows some data samples of our dataset.
-
-   	 </p>
+	<p>
+		<figure class="figure">
+			<img src="assets/dataset.png" class="img-fluid mx-auto" alt="XXX">
+			<figcaption class="figure-caption"><b>Human retargeting dataset.</b> a) The subjects participating in our dataset, their respective height and estimated SMPL body models. b) Overview of all motions available in our proposed dataset. c) Paired motions (upper and lower rows) with annotated motion constraints (3D constraints in blue and 2D constraints in red). d) The reconstructed 3D motions.</figcaption>
+		</figure>
+	</p>
    	 <!-- <p class="text-justify">
    	 	Note: the data for Conan was updated recently to remove duplicate videos. The numerical results pertaining to Conan will be updated soon. 
    	 </p> -->
    	<div>
-   		<a href="https://github.com/verlab/Learning2Dance_CAG_2020/blob/master/dataset.md" class="btn btn-outline-secondary">Download</a>
+   		<a href="https://github.com/verlab/ShapeAwareHumanRetargeting_IJCV_2021#dataset" class="btn btn-outline-secondary">Download</a>
    	</div>
 
 
@@ -235,7 +230,7 @@
  	 <h2>Acknowledgements</h2>
  	  <br>
  	 <p class="text-justify">
-		  This work was supported, in part, by Nvidia, Cnpq, Capes and Fapemig. We use as template for this webpage the page of <a href="http://people.eecs.berkeley.edu/~shiry/projects/speech2gesture/">Speech2Gesture</a>
+		 The authors thank CAPES, CNPq, and FAPEMIG for funding this work. We also thank NVIDIA for the donation of a Titan XP GPU used in this research. We use as template for this webpage the page of <a href="http://people.eecs.berkeley.edu/~shiry/projects/speech2gesture/">Speech2Gesture.</a>
  	 </p>
 
 	</div> <!-- close middle column -->
