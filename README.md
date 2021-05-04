@@ -10,12 +10,16 @@ This repository contains the original implementation of the human retargeting ap
 
 Please cite this code and paper in your publications if it helps your research:
 ```
-@article{gomes2021,
-	title={A Shape-Aware Retargeting Approach to Transfer Human
-		Motion and Appearance in Monocular Videos},
-	author = {Thiago L. Gomes and Renato Martins and Joao Ferreira and Rafael Azevedo and Guilherme Torres and Erickson R. Nascimento},
-	booktitle={International Journal of Computer Vision (IJCV)},
-	year={2021}
+@Article{Gomes2021,
+author={Gomes, Thiago L. and Martins, Renato and Ferreira, Jo{\~a}o and Azevedo, Rafael and Torres, Guilherme and Nascimento, Erickson R.},
+title={A Shape-Aware Retargeting Approach to Transfer Human Motion and Appearance in Monocular Videos},
+journal={International Journal of Computer Vision},
+year={2021},
+month={Apr},
+day={29},
+issn={1573-1405},
+doi={10.1007/s11263-021-01471-x},
+url={https://doi.org/10.1007/s11263-021-01471-x}
 }
 ```
 
