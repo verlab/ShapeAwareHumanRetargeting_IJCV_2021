@@ -1,11 +1,13 @@
 # python requirements
 pip>=9.0
-scipy
-numpy
-opendr==0.77
-matplotlib
-scikit-image
+scipy==1.6.3
+numpy==1.20.3
+numpy-quaternion==2021.4.5.14.42.35
+csaps==1.0.4
+matplotlib==3.4.2
+scikit-image==0.18.1
 deepdish>=0.3
-opencv-python
+opencv-python==4.5.2.52
+chumpy==0.70
 absl-py
 ipdb
