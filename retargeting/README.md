@@ -30,7 +30,7 @@ or without GPU support:
 pip install tensorflow==1.15.0
 ```
 
-For installing and configuring **DIRT** (a fast Differentiable Renderer for TensorFlow), please follow the instructions in [this link](https://github.com/pmh47/dirt). Before doing DIRT setup, is necessary to install ```libnvinfer```.
+For installing and configuring **DIRT** (a fast Differentiable Renderer for TensorFlow), please follow the instructions in [this link](https://github.com/pmh47/dirt). Before doing DIRT setup, is necessary to install ```libnvinfer``` (Instructions for CUDA 10.1).
 
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.1.243-1_amd64.deb
