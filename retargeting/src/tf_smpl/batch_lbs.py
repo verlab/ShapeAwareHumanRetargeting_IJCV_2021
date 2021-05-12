@@ -18,7 +18,7 @@ def batch_skew(vec, batch_size=None):
 
     returns N x 3 x 3. Skew_sym version of each matrix.
     """
-    with tf.name_scope("batch_skew", [vec]):
+    with tf.name_scope("batch_skew", "batch_skew", [vec]):
         if batch_size is None:
             batch_size = vec.shape.as_list()[0]
         col_inds = tf.constant([1, 2, 3, 5, 6, 7])
@@ -104,7 +104,7 @@ def batch_global_rigid_transformation(Rs, Js, parent, rotate_base=False,get_A_gl
       new_J : `Tensor`: N x 24 x 3 location of absolute joints
       A     : `Tensor`: N x 24 4 x 4 relative joint transformations for LBS.
     """
-    with tf.name_scope("batch_forward_kinematics", [Rs, Js]):
+    with tf.name_scope("batch_forward_kinematics", "batch_forward_kinematics", [Rs, Js]):
         N = Rs.shape[0].value
         if rotate_base:
             print('Flipping the SMPL coordinate frame!!!!')

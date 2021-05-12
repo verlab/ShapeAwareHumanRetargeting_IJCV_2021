@@ -74,7 +74,7 @@ _TEX_P_FNAME_CNN = _os.path.join(
 
 _MODEL_NEUTRAL_FNAME = _os.path.join(
     _MOD_PATH, '.', 'models', '3D',
-    'lbs_tj10smooth6_0fixed_normalized_locked_hybrid_model_novt.pkl')
+    'neutral_smpl_with_cocoplus_reg.pkl')
 
 _MODEL_MALE_FNAME = _os.path.join(
     _MOD_PATH, '.', 'models', '3D',
@@ -94,7 +94,7 @@ _MODEL_FT = _os.path.join(
 from src.visibility_match import visibility_match
 from src.draw import warp_tri
 from deformation import deformation
-from normal import compute_normals
+import compute_normals
 from tex.tex import texture_vis
 from tex.tex import texture_remap
 from src.feather_blending import feather_blending
@@ -477,8 +477,8 @@ def get_mesh_to_deformation(filename,model,cam,label_folder):
 
 def deform_mesh(filename,model,cam,label_folder):
     
-    vertices,new_vertices,faces0,todo_vertices,inv_trasformation = get_mesh_to_deformation(filename,model,cam,label_folder)       
-    deformed = deformation.deformation(vertices,todo_vertices,new_vertices,faces0,50)
+    vertices,new_vertices,faces0,todo_vertices,inv_trasformation = get_mesh_to_deformation(filename,model,cam,label_folder)
+    deformed = deformation(vertices,todo_vertices,new_vertices,faces0,50)
 
     t_vertices = np.array(deformed) - np.array(cam['trans']).reshape((1,3))
          

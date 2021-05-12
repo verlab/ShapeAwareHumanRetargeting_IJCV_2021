@@ -42,17 +42,19 @@ _MOD_PATH = _os.path.abspath(_os.path.dirname(__file__))
 # Models:
 # Models:
 
+current_dir = _os.path.dirname(_os.path.abspath(__file__))
+parent_dir = _os.path.abspath(_os.path.join(current_dir, _os.pardir))
 
 _MODEL_NEUTRAL_FNAME = _os.path.join(
-    _MOD_PATH, '..', 'models', '3D',
-    'lbs_tj10smooth6_0fixed_normalized_locked_hybrid_model_novt.pkl')
+    parent_dir, 'models', '3D',
+    'neutral_smpl_with_cocoplus_reg.pkl')
 
 _MODEL_MALE_FNAME = _os.path.join(
-    _MOD_PATH, '..', 'models', '3D',
+    parent_dir, 'models', '3D',
     'basicmodel_m_lbs_10_207_0_v1.0.0.pkl')
 
 _MODEL_FEME_FNAME = _os.path.join(
-    _MOD_PATH, '..', 'models', '3D',
+    parent_dir, 'models', '3D',
     'basicModel_f_lbs_10_207_0_v1.0.0.pkl')
 
 _MODEL_N = _load_model(_MODEL_NEUTRAL_FNAME)
@@ -60,14 +62,14 @@ _MODEL_M = _load_model(_MODEL_MALE_FNAME)
 _MODEL_F = _load_model(_MODEL_FEME_FNAME)
 
 _MODEL_VT = _os.path.join(
-    _MOD_PATH, '..', 'models','basicModel_vt.npy')
+    parent_dir, 'models','basicModel_vt.npy')
 
 _MODEL_FT = _os.path.join(
-    _MOD_PATH, '..', 'models','basicModel_ft.npy')
+    parent_dir, 'models','basicModel_ft.npy')
 
 
 _MODEL_VT_FT_OBJ = _os.path.join(
-    _MOD_PATH, '..', 'models','mapeamento_impaint_2.obj')
+    parent_dir, 'models','mapeamento_impaint_2.obj')
 
 def Template_tex():
 
