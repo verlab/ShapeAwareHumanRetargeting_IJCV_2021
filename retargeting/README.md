@@ -46,9 +46,24 @@ sudo apt-get install -y --no-install-recommends libnvinfer6=6.0.1-1+cuda10.1 \
     libnvinfer-plugin6=6.0.1-1+cuda10.1
 ```
 
-### Downloading SMPL Models
+### Downloading the male and female models
 
-For running the motion reconstruction and retargeting, we need the SMPL body priors available on Multi-view SMPLify repository: please download the models from  [DCT_Basis](https://github.com/YinghaoHuang91/MuVS/tree/master/Data/DCT_Basis) and [Prior](https://github.com/YinghaoHuang91/MuVS/tree/master/Data/Prior) and put them under the folder ```models```. Finally, to download the **SMPL** human body models, please go to [this page](http://smpl.is.tue.mpg.de), sign in, download the male and female basic models from version 1.0.0 (10 shape PCs) and put them into the ```models``` folder. To get the gender neutral model go to [this page](https://github.com/akanazawa/hmr) (gender neutral model), download the models as instructed and put the file ```neutral_smpl_with_cocoplus_reg.pkl``` under the ```models``` folder.
+1. Go to the [SMPL project page](http://smpl.is.tue.mpg.de) and Sign In.
+2. Go to the section Downloads, and get the 1.0.0 SMPL version for Python2.7.
+3. Put the ```basicModel_f_lbs_10_207_0_v1.0.0.pkl``` and ```basicmodel_m_lbs_10_207_0_v1.0.0.pkl``` in the models/ folder
+
+### Downloading the neutral gender model
+
+1. Download the gender neutral model from [HMR project page](http://https://github.com/akanazawa/hmr)
+```
+wget https://people.eecs.berkeley.edu/~kanazawa/cachedir/hmr/models.tar.gz && tar -xf models.tar.gz
+```
+2. Put the ```neutral_smpl_with_cocoplus_reg.pkl``` in the models/ folder
+
+### Downloading the SMPL body priors
+
+1. Go to [this repository](https://github.com/YinghaoHuang91/MuVS/tree/master/Data/)
+2. Download the ```DCT_Basis``` and ```Prior``` and put them in the folder ```models``` 
 
 
 ## II - Usage and Description
