@@ -4,7 +4,42 @@ In order to transfer the motion and appearance between the human actors, we firs
 
 We provide retargeting example with data from the dataset (after the install steps).
 
-## I - Installation and Setup
+## I - Setup models and files
+
+### Downloading the male and female models
+
+1. Go to the [SMPL project page](http://smpl.is.tue.mpg.de) and Sign In.
+2. Go to the section Downloads, and get the 1.0.0 SMPL version for Python2.7.
+3. Put the ```basicModel_f_lbs_10_207_0_v1.0.0.pkl``` and ```basicmodel_m_lbs_10_207_0_v1.0.0.pkl``` in the models/ folder
+
+### Downloading the neutral gender model
+
+1. Download the gender neutral model from [HMR project page](http://https://github.com/akanazawa/hmr)
+```
+wget https://people.eecs.berkeley.edu/~kanazawa/cachedir/hmr/models.tar.gz && tar -xf models.tar.gz
+```
+2. Put the ```neutral_smpl_with_cocoplus_reg.pkl``` in the models/ folder
+
+### Downloading the SMPL body priors
+
+1. Go to [this repository](https://github.com/YinghaoHuang91/MuVS/tree/master/Data/)
+2. Download the ```DCT_Basis``` and ```Prior``` and put them in the folder ```models``` 
+
+## II - Installation
+
+### Case 1 - Run with Singularity
+
+- Install [Singularity](https://sylabs.io/guides/3.5/user-guide/quick_start.html#quick-installation-steps)
+- Build the image: ``` sudo singularity build <image-name>.sif singularity/retargeting.def ```
+- Run the image with: ``` sudo singularity run -B <bind-dir> --nv <image-name>.sif ```
+
+### Case 2 - Run with Docker
+
+- Install [Docker](https://docs.docker.com/engine/install/)
+- Build the image: ``` docker build -t <image-name> -f docker/Dockerfile ../```
+- Run the image: ``` docker run --runtime=nvidia <image-name>:latest ```
+
+### Case 3 - Run with virtualenv
 
 ### Requirements
 - Python 3.5+ (Tested with Python 3.5.2 and Python 3.7.3)
@@ -46,27 +81,7 @@ sudo apt-get install -y --no-install-recommends libnvinfer6=6.0.1-1+cuda10.1 \
     libnvinfer-plugin6=6.0.1-1+cuda10.1
 ```
 
-### Downloading the male and female models
-
-1. Go to the [SMPL project page](http://smpl.is.tue.mpg.de) and Sign In.
-2. Go to the section Downloads, and get the 1.0.0 SMPL version for Python2.7.
-3. Put the ```basicModel_f_lbs_10_207_0_v1.0.0.pkl``` and ```basicmodel_m_lbs_10_207_0_v1.0.0.pkl``` in the models/ folder
-
-### Downloading the neutral gender model
-
-1. Download the gender neutral model from [HMR project page](http://https://github.com/akanazawa/hmr)
-```
-wget https://people.eecs.berkeley.edu/~kanazawa/cachedir/hmr/models.tar.gz && tar -xf models.tar.gz
-```
-2. Put the ```neutral_smpl_with_cocoplus_reg.pkl``` in the models/ folder
-
-### Downloading the SMPL body priors
-
-1. Go to [this repository](https://github.com/YinghaoHuang91/MuVS/tree/master/Data/)
-2. Download the ```DCT_Basis``` and ```Prior``` and put them in the folder ```models``` 
-
-
-## II - Usage and Description
+## III - Usage and Description
 
 1. For running the motion reconstruction in a sequence of the provided dataset, containing pre-computed SPIN poses (for instance for the **box**), please run:
 ```

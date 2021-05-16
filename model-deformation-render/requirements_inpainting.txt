@@ -1,5 +1,5 @@
-neuralgym @ git+https://github.com/JiahuiYu/neuralgym@88292adb524186693a32404c0cfdc790426ea441
-numpy==1.20.3
+git+https://github.com/JiahuiYu/neuralgym@88292adb524186693a32404c0cfdc790426ea441
+numpy==1.18.5
 opencv-python==4.5.2.52
 Pillow==8.2.0
 pyaml==20.4.0

@@ -7,7 +7,8 @@ csaps==1.0.4
 matplotlib==3.4.2
 scikit-image==0.18.1
 deepdish>=0.3
-opencv-python==4.5.2.52
+opencv-python==4.5.1.48
 chumpy==0.70
+statsmodels
 absl-py
 ipdb

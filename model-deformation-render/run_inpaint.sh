@@ -1,6 +1,6 @@
 #!/bin/bash
-source /code/venv3/bin/activate; 
-python inpaint.py --image $1  --output $2
+#source /app/venv_p/bin/activate; 
+python3.7 inpaint.py --image $1  --output $2
 
 
 

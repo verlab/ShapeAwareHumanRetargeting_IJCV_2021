@@ -1,0 +1,23 @@
+Bootstrap: docker
+From: nvidia/cudagl:10.0-devel-ubuntu16.04
+
+%help
+    Retargeting module recipe file to build singularity container.
+%files
+    requirements.txt /opt/requirements.txt
+%environment
+    export CUDA_BASE_VERSION=10.0
+    export CUDNN_VERSION=7.6.0.64
+    export TENSORFLOW_VERSION=1.14.0
+    export CUDAFLAGS='-DNDEBUG=1'
+%post
+    echo "Installing Retargeting"
+    apt-get update && apt-get install -y git vim wget software-properties-common curl
+    apt-get purge cmake && cd ~ && wget https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.14.5.tar.gz && tar -xvf cmake-3.14.5.tar.gz
+    cd ~/cmake-3.14.5 && ./bootstrap && make -j6 && make install
+    apt-add-repository -y ppa:deadsnakes/ppa && apt-get update && apt-get install -y python3.7 && ln -s /usr/bin/python3.7 /usr/bin/python && curl https://bootstrap.pypa.io/get-pip.py | python
+    apt-get install -y --no-install-recommends libcudnn7=7.6.0.64-1+cuda10.0 libcudnn7-dev=7.6.0.64-1+cuda10.0
+    apt-mark hold libcudnn7 && rm -rf /var/lib/apt/lists/*
+    python -m pip install tensorflow-gpu==1.14.0
+    cd ~ && git clone https://github.com/pmh47/dirt.git && python -m pip install dirt/
+    python -m pip install -r /opt/requirements.txt
